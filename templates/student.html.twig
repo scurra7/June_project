@@ -1,0 +1,52 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    Student page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block membersNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+    <a href="/logout">Logout</a>
+
+   <p>
+    Student Page {{ username }}
+    </p>
+
+
+<h2>Student List</h2>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Surname</th>
+        <th> First Name </th>
+        <th>joined Club</th>
+        <th>Last Grading </th>
+        <th>Current Grade</th>
+        <th>View</th>
+        <th>Edit</th>
+    </tr>
+
+    {% for student in students %}
+
+    <tr>
+        <td>{{student.id  }}</td>
+        <td>{{student.surname  }}</td>
+        <td>{{student.firstName  }}</td>
+        <td>{{student.joinedClub  }}</td>
+        <td>{{student.lastGrading }}</td>
+        <td>{{student.currentGrade  }}</td>
+      <td><a href="/studentDetail/{{ student.id }}">{{  student.id }}</a></td>
+        <td><a href="/editMember/{{ student.id }}">edit</a></td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}

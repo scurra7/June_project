@@ -1,0 +1,16 @@
+TAP version 13
+ok 1 - Itb\Test::testToSeeIfTestFileIsSetUpRight
+ok 2 - Itb\memberTest::testGetId
+ok 3 - Itb\memberTest::testGetCurrentBeltGrade
+ok 4 - Itb\memberTest::testGetCurrentStatus
+ok 5 - Itb\memberTest::testGetNextGrade
+ok 6 - Itb\memberTest::testGetNextBeltGradeSyllabus
+ok 7 - Itb\memberTest::testGetRequireStatus
+ok 8 - Itb\memberTest::testGetName
+ok 9 - Itb\studentTest::testGetId
+ok 10 - Itb\studentTest::testGetSurname
+ok 11 - Itb\studentTest::testGetFirstName
+ok 12 - Itb\studentTest::testGetLastGrading
+ok 13 - Itb\studentTest::testGetCurrentGrading
+ok 14 - Itb\userTest::testGetId
+1..14

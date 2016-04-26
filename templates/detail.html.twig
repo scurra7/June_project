@@ -1,0 +1,44 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    Member page
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block membersNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+    <h2>Members pst</h2>
+
+    <ul>
+{
+
+        <li><p>Id</p>{{ member.id }}</li>
+
+
+        <li><p>Current Belt</p>{{ member.currentBeltGrade }}</li>
+
+
+        <li>  <p>Current Status</p>{{ member.currentStatus }}</li>
+
+
+        <li><p>Next Grade</p>{{ member.nextGrade }}</li>
+
+
+        <li><p>Next Belt Grade Syllabus</p>{{ member.nextBeltGradesyllabus }}</li>
+
+
+        <li><p>Required Status</p>{{ member.requireStatus }}</li>
+
+
+        <li><p>Name</p>{{ member.name }}</li>
+}
+
+
+
+    </ul>
+
+{% endblock %}
