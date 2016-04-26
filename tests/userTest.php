@@ -25,7 +25,7 @@ class userTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-    /*
+
    public function testGetUsers()
     {
         // Arrange
@@ -40,61 +40,61 @@ class userTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-        public function testGetPassword()
-        {
-            // Arrange
-            $user = new User();
-            $user->setPassword("Details");
-            $expectedResult = "Details";
+           public function testGetPassword()
+           {
+               // Arrange
+               $user = new User();
+               $user->setPassword("Details");
+               $expectedResult = "Details";
 
-            // Act
-            $result = $user->getPassword();
+               // Act
+               $result = $user->getPassword();
 
-            // Assert
-            $this->assertEquals($expectedResult, $result);
-        }
+               // Assert
+               $this->assertEquals($expectedResult, $result);
+           }
 
-          public function role()
-          {
-              // Arrange
-              $user = new User();
-              $user->setRole("Details");
-              $expectedResult = "Details";
+             public function role()
+             {
+                 // Arrange
+                 $user = new User();
+                 $user->setRole("Details");
+                 $expectedResult = "Details";
 
-              // Act
-              $result = $user->getRole();
+                 // Act
+                 $result = $user->getRole();
 
-              // Assert
-              $this->assertEquals($expectedResult, $result);
-          }
+                 // Assert
+                 $this->assertEquals($expectedResult, $result);
+             }
 
-              public function testGetLastGrading()
-              {
-                  // Arrange
-                  $user = new User();
-                  $user->setLastGrading("Details");
-                  $expectedResult = "Details";
-
-                  // Act
-                  $result = $user->getLastGrading();
-
-                  // Assert
-                  $this->assertEquals($expectedResult, $result);
-              }
-
-                 public function testGetCurrentGrading()
+                /* public function testGetLastGrading()
                  {
                      // Arrange
                      $user = new User();
-                     $user->setCurrentGrading("Details");
+                     $user->setLastGrading("Details");
                      $expectedResult = "Details";
 
                      // Act
-                     $result = $user->GetCurrentGrading();
+                     $result = $user->getLastGrading();
 
                      // Assert
                      $this->assertEquals($expectedResult, $result);
-                 }*/
+                 }
+
+                    public function testGetCurrentGrading()
+                    {
+                        // Arrange
+                        $user = new User();
+                        $user->setCurrentGrading("Details");
+                        $expectedResult = "Details";
+
+                        // Act
+                        $result = $user->GetCurrentGrading();
+
+                        // Assert
+                        $this->assertEquals($expectedResult, $result);
+                    }*/
 
 
 }
