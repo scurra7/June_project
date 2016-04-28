@@ -16,13 +16,33 @@ use Mattsmithdev\PdoCrud\DatabaseManager;
 
 class Login extends DatabaseTable
 {
+    /*
+     * user login roles
+     * student =0
+     * admin =1
+     */
     const ROLE_USER=0;
     const ROLE_ADMIN=1;
 
 
+    /**
+     * @var integer
+     */
     private $id;
+
+    /**
+     * @var
+     */
     private $password;
+
+    /**
+     * @var
+     */
     private $role;
+
+    /**
+     * @var
+     */
     private $username;
 
     /**
@@ -80,6 +100,24 @@ class Login extends DatabaseTable
         $this->password = $hashedPassword;
     }
 
+    /**
+     * @return mixed
+     * get user Role
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $username
+     * set user Roles
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
     public static function canFindMatchingUsernameAndPassword($username, $password)
     {
         $user = Login::getOneByUsername($username);
@@ -111,23 +149,7 @@ class Login extends DatabaseTable
 
         return $user->getRole();
     }
-    /**
-     * @return mixed
-     * get user Role
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
 
-    /**
-     * @param mixed $username
-     * set user Roles
-     */
-    public function setRole($role)
-    {
-        $this->role = $role;
-    }
 
     /**
      * if record exists with $username, return User object for that record
