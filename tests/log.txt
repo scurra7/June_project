@@ -13,4 +13,6 @@ ok 11 - Itb\studentTest::testGetFirstName
 ok 12 - Itb\studentTest::testGetLastGrading
 ok 13 - Itb\studentTest::testGetCurrentGrading
 ok 14 - Itb\userTest::testGetId
-1..14
+ok 15 - Itb\userTest::testGetUsers
+ok 16 - Itb\userTest::testGetPassword
+1..16

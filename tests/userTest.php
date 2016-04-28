@@ -68,33 +68,6 @@ class userTest extends \PHPUnit_Framework_TestCase
                  $this->assertEquals($expectedResult, $result);
              }
 
-                /* public function testGetLastGrading()
-                 {
-                     // Arrange
-                     $user = new User();
-                     $user->setLastGrading("Details");
-                     $expectedResult = "Details";
-
-                     // Act
-                     $result = $user->getLastGrading();
-
-                     // Assert
-                     $this->assertEquals($expectedResult, $result);
-                 }
-
-                    public function testGetCurrentGrading()
-                    {
-                        // Arrange
-                        $user = new User();
-                        $user->setCurrentGrading("Details");
-                        $expectedResult = "Details";
-
-                        // Act
-                        $result = $user->GetCurrentGrading();
-
-                        // Assert
-                        $this->assertEquals($expectedResult, $result);
-                    }*/
 
 
 }
