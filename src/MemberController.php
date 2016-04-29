@@ -62,7 +62,7 @@ class MemberController
     }
 
     /**
-     * edit member action
+     * Edit member action
      * @param Request $request
      * @param Application $app
      * @return mixed

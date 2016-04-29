@@ -23,6 +23,34 @@ class Student extends DatabaseTable
 {
 
     /**
+     * Student surname
+     * private $id;
+     * @var int
+     */
+    private $surname;
+
+    /**
+     * Student  first name
+     * private $firstName;
+     * @var Text
+     */
+    private $lastGrading;
+
+    /**
+     * Student current grade
+     * @var Text
+     */
+    private $currentGrade;
+
+    /**
+     * Date student joined club
+     * @var Date
+     *
+     */
+    private $joinedClub;
+
+    /**
+     *
      * get student id
      * @return mixed
      */

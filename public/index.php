@@ -29,8 +29,9 @@ $app->get('/matt/{id}',  \Itb\Utility::controller('Itb', 'main/matt'));
 
 $app->get('/editMemberTableDisplay', \Itb\Utility::controller('Itb', 'member/editMemberTableDisplay'));
 $app->get('/editMember/{id}', \Itb\Utility::controller('Itb', 'member/editMemberDisplay'));
+$app->get('/editStudent/{id}', \Itb\Utility::controller('Itb', 'student/editStudentDisplay'));
 $app->post('/editMemberDetails', \Itb\Utility::controller('Itb', 'member/editMemberDetails'));
-
+$app->post('/editStudentDetails', \Itb\Utility::controller('Itb', 'student/editStudentDetails'));
 $app->get('/createMember', \Itb\Utility::controller('Itb', 'member/createMember'));
 $app->post('/newMember', \Itb\Utility::controller('Itb', 'member/newMember'));
 
