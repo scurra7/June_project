@@ -11,14 +11,42 @@ namespace Itb;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * Holds user role and password
+ * Class User
+ * @package Itb
+ *
+ *
+ */
 class User extends DatabaseTable
 {
+    /**
+     * User id
+     * @var integer
+     */
     private $id;
+
+    /**
+     * User
+     * @var mixed
+     */
     private $users;
+
+    /**
+     * Password var
+     * @var
+     *
+     */
     private $password;
+
+    /**
+     * Admin/student role
+     * @var
+     */
     private $role;
 
     /**
+     * Gets user id
      * @return mixed
      */
     public function getId()
@@ -27,6 +55,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Sets user id
      * @param mixed $id
      */
     public function setId($id)
@@ -35,6 +64,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Gets user
      * @return mixed
      */
     public function getUsers()
@@ -43,6 +73,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Gets user
      * @param mixed $users
      */
     public function setUsers($users)
@@ -51,6 +82,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Gets user password
      * @return mixed
      */
     public function getPassword()
@@ -59,6 +91,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Gets user password
      * @param mixed $password
      */
     public function setPassword($password)
@@ -67,6 +100,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Gets user role
      * @return mixed
      */
     public function getRole()
@@ -75,6 +109,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * Sets user role
      * @param mixed $role
      */
     public function setRole($role)

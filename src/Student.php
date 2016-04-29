@@ -1,5 +1,6 @@
 <?php
 /**
+ * Shtuent Class
  * Created by PhpStorm.
  * User: Steve Curran
  * Date: 08/04/2016
@@ -10,34 +11,33 @@ namespace Itb;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * for student id, surname, first name,
+ * date student joined club,
+ * last grading and current standing
+ * Class Student
+ * @package Itb
+ */
+
 class Student extends DatabaseTable
 {
-    /**
-     *
-     * @var
-     * for student id, surname, first name, date student joined club,
-     * last grading and current standing
-     */
 
 
-    /**
-     * @return mixed
-     * get student current grade
-     */
-    public function getCurrentGrading()
+
+
+/*    public function getCurrentGrading()
     {
         return $this->currentGrading;
     }
 
-    /**
-     * @param mixed $currentGrading
-     */
+
     public function setCurrentGrading($currentGrading)
     {
         $this->currentGrading = $currentGrading;
-    }
+    }*/
 
     /**
+     * get student id
      * @return mixed
      */
     public function getId()
@@ -46,6 +46,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * set student id
      * @param mixed $id
      */
     public function setId($id)
@@ -54,6 +55,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * get student surname
      * @return mixed
      */
     public function getSurname()
@@ -62,6 +64,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * set student surname
      * @param mixed $surname
      */
     public function setSurname($surname)
@@ -70,6 +73,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * get student first name
      * @return mixed
      */
     public function getFirstName()
@@ -78,6 +82,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * set student first name
      * @param mixed $firstName
      */
     public function setFirstName($firstName)
@@ -86,6 +91,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * get date joined club
      * @return mixed
      */
     public function getJoinedClub()
@@ -94,6 +100,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * set date student joined club
      * @param mixed $joinedClub
      */
     public function setJoinedClub($joinedClub)
@@ -102,6 +109,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * get student last grading
      * @return mixed
      */
     public function getLastGrading()
@@ -110,6 +118,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * set student last grading
      * @param mixed $lastGrading
      */
     public function setLastGrading($lastGrading)
@@ -118,6 +127,7 @@ class Student extends DatabaseTable
     }
 
     /**
+     * get student current grade
      * @return mixed
      */
     public function getCurrentGrade()
@@ -126,7 +136,9 @@ class Student extends DatabaseTable
     }
 
     /**
-     * @param mixed $currentGrade
+     * Set Current Grade
+     * @param $currentGrade
+     *
      */
     public function setCurrentGrade($currentGrade)
     {

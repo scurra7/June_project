@@ -1,18 +1,29 @@
 <?php
 /**
+ * controller ft retrieve student info
  * Created by PhpStorm.
  * User: Steve Curran
  * Date: 20/04/2016
  * Time: 17:40
  */
-
 namespace Itb;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class StudentController
+ * @package Itb
+ */
 class StudentController
 {
+    /**
+     * student controller class
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return mixed
+     */
  public function studentDetailAction(Request $request, Application $app,$id)
 
  {

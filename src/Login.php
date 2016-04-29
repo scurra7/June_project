@@ -13,6 +13,12 @@ namespace Itb;
 use Mattsmithdev\PdoCrud\DatabaseTable;
 use Mattsmithdev\PdoCrud\DatabaseManager;
 
+/**
+ * Class for Admin
+ * and user login
+ * Class Login
+ * @package Itb
+ */
 
 class Login extends DatabaseTable
 {
@@ -26,26 +32,32 @@ class Login extends DatabaseTable
 
 
     /**
+     * login id
      * @var integer
      */
     private $id;
 
     /**
-     * @var
+     * login  password
+     * @var varcar
      */
     private $password;
 
     /**
-     * @var
+     *login role for student and admin
+     * @var text
      */
     private $role;
 
     /**
+     * user name
      * @var
+     * student and admin
      */
     private $username;
 
     /**
+     * get student/admin
      * @return mixed
      * get Username
      */
@@ -55,6 +67,7 @@ class Login extends DatabaseTable
     }
 
     /**
+     * set student/admin
      * @param mixed $username
      * set Username
      */
@@ -64,6 +77,7 @@ class Login extends DatabaseTable
     }
 
     /**
+     * get the student id
      * @return mixed
      * get user Id
      */
@@ -73,6 +87,7 @@ class Login extends DatabaseTable
     }
 
     /**
+     * set the id
      * @param mixed $id
      * set user Id
      */
@@ -82,6 +97,7 @@ class Login extends DatabaseTable
     }
 
     /**
+     * get password
      * @return mixed
      * get user Password
      */
@@ -91,6 +107,7 @@ class Login extends DatabaseTable
     }
 
     /**
+     * users password
      * @param mixed $password
      * hashed's users password
      */
@@ -101,8 +118,11 @@ class Login extends DatabaseTable
     }
 
     /**
-     * @return mixed
      * get user Role
+     * admin/student
+     * @return mixed
+     *
+     *
      */
     public function getRole()
     {
@@ -110,14 +130,24 @@ class Login extends DatabaseTable
     }
 
     /**
-     * @param mixed $username
      * set user Roles
+     * admin/student
+     * @param mixed $username
+     *
      */
     public function setRole($role)
     {
         $this->role = $role;
     }
 
+    /**
+     * looking for matching username and password
+     * @param $username
+     * @param $password
+     * @return bool
+     * @codeCoverageIgnore
+     *
+     */
     public static function canFindMatchingUsernameAndPassword($username, $password)
     {
         $user = Login::getOneByUsername($username);
@@ -135,6 +165,13 @@ class Login extends DatabaseTable
         return password_verify($password, $hashedStoredPassword);
     }
 
+    /**
+     * finds role of user by name
+     * @param $username
+     * @return bool
+     * @codeCoverageIgnore
+     *
+     */
     public static function FindingRole($username)
     {
         $user = Login::getOneByUsername($username);
@@ -158,6 +195,7 @@ class Login extends DatabaseTable
      * @param $username
      *
      * @return mixed|null
+     * @codeCoverageIgnore
      */
     public static function getOneByUsername($username)
     {

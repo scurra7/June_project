@@ -12,6 +12,10 @@ use Itb\Member;
 
 class memberTest extends \PHPUnit_Framework_TestCase
 {
+
+    /**
+     *
+     */
     public function testGetId()
     {
         // Arrange
@@ -25,7 +29,9 @@ class memberTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-    
+    /*
+     * checks the members currentBeltGrade
+     */
    public function testGetCurrentBeltGrade()
     {
         // Arrange
@@ -39,7 +45,9 @@ class memberTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-
+    /*
+     * checks the member currentStatus
+     */
         public function testGetCurrentStatus()
         {
             // Arrange
@@ -53,7 +61,9 @@ class memberTest extends \PHPUnit_Framework_TestCase
             // Assert
             $this->assertEquals($expectedResult, $result);
         }
-
+        /*
+         * checks member nextGrade
+         */
           public function testGetNextGrade()
           {
               // Arrange
@@ -67,7 +77,9 @@ class memberTest extends \PHPUnit_Framework_TestCase
               // Assert
               $this->assertEquals($expectedResult, $result);
           }
-
+        /*
+         * checks member nextBeltGradeSyllabus
+         */
               public function testGetNextBeltGradeSyllabus()
               {
                   // Arrange

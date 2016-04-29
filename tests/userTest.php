@@ -54,7 +54,7 @@ class userTest extends \PHPUnit_Framework_TestCase
                $this->assertEquals($expectedResult, $result);
            }
 
-             public function role()
+             public function testGetRole()
              {
                  // Arrange
                  $user = new User();

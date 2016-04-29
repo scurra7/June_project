@@ -12,6 +12,9 @@ use Itb\Student;
 
 class studentTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     *
+     */
     public function testGetId()
     {
         // Arrange
@@ -54,7 +57,7 @@ class studentTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals($expectedResult, $result);
         }
 
-          public function joinedClub()
+          public function testGetJoinedClub()
           {
               // Arrange
               $student = new Student();
@@ -82,15 +85,15 @@ class studentTest extends \PHPUnit_Framework_TestCase
                   $this->assertEquals($expectedResult, $result);
               }
 
-                 public function testGetCurrentGrading()
+                 public function testGetCurrentGrade()
                  {
                      // Arrange
                      $student = new Student();
-                     $student->setCurrentGrading("Details");
+                     $student->setCurrentGrade("Details");
                      $expectedResult = "Details";
 
                      // Act
-                     $result = $student->GetCurrentGrading();
+                     $result = $student->GetCurrentGrade();
 
                      // Assert
                      $this->assertEquals($expectedResult, $result);

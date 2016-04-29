@@ -11,22 +11,62 @@ namespace Itb;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * class for members
+ * Class Member
+ * @package Itb
+ *
+ */
 class Member extends DatabaseTable
 {
     /**
-     * Var
-    */
+     * holds member id
+     * @var int
+     *
+     */
     private $id;
+
+    /**
+     * stores member current belt grade
+     * @var
+     * hold
+     */
     private $currentBeltGrade;
+
+    /**
+     * stores current status
+     * @var
+     */
     private $currentStatus;
+
+    /**
+     * holds member next grade
+     * @var
+     */
     private $nextGrade;
+
+    /**
+     * holds member next belt syllabus
+     * @var
+     */
     private $nextBeltGradeSyllabus;
+
+    /**
+     * holds memberrequired status
+     * @var
+     */
     private $requireStatus;
+
+    /**
+     * holds member name
+     * @var
+     */
     private $name;
 
     /**
-     * @return mixed
      * get student Name
+     * @return mixed
+     *
      */
     public function getName()
     {
@@ -34,16 +74,19 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $name
      * set student Name
+     * @param mixed $name
+     *
      */
     public function setName($name)
     {
         $this->name = $name;
     }
+
     /**
-     * @return mixed
      * get student Id
+     * @return mixed
+     *
      */
     public function getId()
     {
@@ -51,8 +94,10 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $id
+     *
      * set student Name
+     * @param mixed $id
+     *
      */
     public function setId($id)
     {
@@ -60,8 +105,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @return mixed
      * get student Current Belt Grade
+     * @return mixed
+     *
      */
     public function getCurrentBeltGrade()
     {
@@ -69,8 +115,8 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $currentBeltGrade
-     * set student Current Grade
+     * set current grade
+     * @param $currentBeltGrade
      */
     public function setCurrentBeltGrade($currentBeltGrade)
     {
@@ -78,8 +124,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @return mixed
      * get student Current Status
+     * @return mixed
+     *
      */
     public function getCurrentStatus()
     {
@@ -87,6 +134,7 @@ class Member extends DatabaseTable
     }
 
     /**
+     * set student Current Status
      * @param mixed $currentStatus
      *  set student Current Status
      */
@@ -96,6 +144,7 @@ class Member extends DatabaseTable
     }
 
     /**
+     * get student Next Grade
      * @return mixed
      * get student Next Grade
      */
@@ -105,6 +154,7 @@ class Member extends DatabaseTable
     }
 
     /**
+     * set student Next Grade
      * @param mixed $nextGrad
      * set student Next Grade
      */
@@ -114,6 +164,7 @@ class Member extends DatabaseTable
     }
 
     /**
+     * get student Next Belt Grade Syllabus
      * @return mixed
      * get student Next Belt Grade Syllabus
      */
@@ -123,8 +174,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $nextBeltGradeSyllabus
      * set student Next Belt Grade Syllabus
+     * @param mixed $nextBeltGradeSyllabus
+     *
      */
     public function setNextBeltGradeSyllabus($nextBeltGradeSyllabus)
     {
@@ -132,8 +184,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @return mixed
      * get student Required Status
+     * @return mixed
+     *
      */
     public function getRequireStatus()
     {
@@ -141,8 +194,9 @@ class Member extends DatabaseTable
     }
 
     /**
+     * set student Required Status
      * @param mixed $requireStatus
-     *  set student Required Status
+     *
      */
     public function setRequireStatus($requireStatus)
     {

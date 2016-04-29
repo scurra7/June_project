@@ -1,4 +1,9 @@
 <?php
+/**
+ * member controller class
+ * Class MemberController
+ * @package Itb
+ */
 namespace Itb;
 
 use Silex\Application;
@@ -8,18 +13,20 @@ use Itb\Login;
 use Itb\User;
 use Itb\Member;
 
+/**
+ * member controler class
+ * Class MemberController
+ * @package Itb
+ */
 class MemberController
 {
-    /**
-     * render the days page template
-     */
 
     /**
-     * render the About page template
+     * Edit member table
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
-
-
-
     public function editMemberTableDisplayAction(Request $request, Application $app)
     {
 
@@ -34,8 +41,13 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-
-
+    /**
+     * retrevise members by id
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return mixed
+     */
     public function editMemberDisplayAction(Request $request, Application $app, $id)
     {
 
@@ -51,7 +63,12 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-
+    /**
+     * edit member action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function editMemberDetailsAction(Request $request, Application $app)
     {
         $user = $app['session']->get('user');
@@ -99,6 +116,13 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * create member action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     *
+     */
     public function createMemberAction(Request $request, Application $app)
     {
 
@@ -113,7 +137,12 @@ class MemberController
 
     }
 
-
+    /**
+     * new member action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function newMemberAction(Request $request, Application $app)
     {
 
@@ -163,7 +192,13 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-
+    /**
+     * delete member table action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     *
+     */
     public function deleteMemberTableDisplayAction(Request $request, Application $app)
     {
 
@@ -183,6 +218,14 @@ class MemberController
 
     }
 
+    /**
+     * delete member
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     *
+     */
     public function deleteMemberAction(Request $request, Application $app, $id)
     {
 
