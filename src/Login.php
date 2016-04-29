@@ -21,7 +21,7 @@ use Mattsmithdev\PdoCrud\DatabaseManager;
 class Login extends DatabaseTable
 {
     /*
-     * user login roles
+     * User login roles
      * student =0
      * admin =1
      */
@@ -30,32 +30,32 @@ class Login extends DatabaseTable
 
 
     /**
-     * login id
+     * Login id
      * @var integer
      */
     private $id;
 
     /**
-     * login  password
+     * Login  password
      * @var varcar
      */
     private $password;
 
     /**
-     *login role for student and admin
+     *Login role for student and admin
      * @var text
      */
     private $role;
 
     /**
-     * user name
+     * User name
      * @var
      * student and admin
      */
     private $username;
 
     /**
-     * get student/admin
+     * Get student/admin
      * @return mixed
      * get Username
      */
@@ -65,7 +65,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * set student/admin
+     * Set student/admin
      * @param mixed $username
      * set Username
      */
@@ -75,7 +75,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * get the student id
+     * Get the student id
      * @return mixed
      * get user Id
      */
@@ -85,7 +85,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * set the id
+     * Set the id
      * @param mixed $id
      * set user Id
      */
@@ -95,7 +95,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * get password
+     * Get password
      * @return mixed
      * get user Password
      */
@@ -105,7 +105,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * users password
+     * Users password
      * @param mixed $password
      * hashed's users password
      */
@@ -116,7 +116,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * get user Role
+     * Get user Role
      * admin/student
      * @return mixed
      *
@@ -128,7 +128,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * set user Roles
+     * Set user Roles
      * admin/student
      * @param mixed $username
      *
@@ -139,7 +139,7 @@ class Login extends DatabaseTable
     }
 
     /**
-     * looking for matching username and password
+     * Looking for matching username and password
      * @param $username
      * @param $password
      * @return bool
@@ -149,8 +149,7 @@ class Login extends DatabaseTable
     public static function canFindMatchingUsernameAndPassword($username, $password)
     {
         $user = Login::getOneByUsername($username);
-       // var_dump($user);
-        //die();
+
         // if no record has this username, return FALSE
         if (null == $user) {
             return false;

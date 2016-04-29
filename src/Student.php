@@ -1,6 +1,6 @@
 <?php
 /**
- * Shtuent Class
+ * Student Class
  * Created by PhpStorm.
  * User: Steve Curran
  * Date: 08/04/2016
@@ -16,25 +16,11 @@ use Mattsmithdev\PdoCrud\DatabaseTable;
  * date student joined club,
  * last grading and current standing
  * Class Student
+ * Class Student
  * @package Itb
  */
-
 class Student extends DatabaseTable
 {
-
-
-
-
-    /*    public function getCurrentGrading()
-    {
-        return $this->currentGrading;
-    }
-
-
-    public function setCurrentGrading($currentGrading)
-    {
-        $this->currentGrading = $currentGrading;
-    }*/
 
     /**
      * get student id
@@ -127,7 +113,7 @@ class Student extends DatabaseTable
     }
 
     /**
-     * get student current grade
+     * Get current grade
      * @return mixed
      */
     public function getCurrentGrade()
@@ -136,13 +122,11 @@ class Student extends DatabaseTable
     }
 
     /**
-     * Set Current Grade
+     * Set current grade
      * @param $currentGrade
-     *
      */
     public function setCurrentGrade($currentGrade)
     {
         $this->currentGrade = $currentGrade;
     }
-    private $currentGrade;
 }

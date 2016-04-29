@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * main class for
+ * Main class for
  * Class MainController
  * @package Itb
  *
@@ -120,7 +120,7 @@ class MainController
         }
 
 
-        // login page with error message
+        // Login page with error message
         // ------------
         $templateName = 'index';
         $argsArray = array(
@@ -171,7 +171,6 @@ class MainController
     {
         $user = $app['session']->get('user');
 
-       //print_r($user); die();
         if ($user['role']) {
             $students = Student::getAll();
 
@@ -250,8 +249,6 @@ class MainController
         $argsArray = [
             'member' => $member,
         ];
-     /*   print('print');
-        die();*/
 
         $template = 'detail';
         return $app ['twig']->render($template . '.html.twig', $argsArray);
@@ -259,7 +256,7 @@ class MainController
 
     /**
      *
-     * if (!isset($blogPosts[$id])) {
+     * If (!isset($blogPosts[$id])) {
      *  // generate a 404 error from within a controller...
      *  $app->abort(404, "Post $id does not exist.");
      * }
