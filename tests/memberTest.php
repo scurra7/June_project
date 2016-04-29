@@ -7,8 +7,8 @@
  */
 
 namespace Itb;
-use Itb\Member;
 
+use Itb\Member;
 
 class memberTest extends \PHPUnit_Framework_TestCase
 {
@@ -33,18 +33,18 @@ class memberTest extends \PHPUnit_Framework_TestCase
      * checks the members currentBeltGrade
      */
    public function testGetCurrentBeltGrade()
-    {
-        // Arrange
+   {
+       // Arrange
         $member = new Member();
-        $member->setCurrentBeltGrade("Belt");
-        $expectedResult = "Belt";
+       $member->setCurrentBeltGrade("Belt");
+       $expectedResult = "Belt";
 
         // Act
         $result = $member->getCurrentBeltGrade();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
-    }
+   }
     /*
      * checks the member currentStatus
      */
@@ -94,31 +94,31 @@ class memberTest extends \PHPUnit_Framework_TestCase
                   $this->assertEquals($expectedResult, $result);
               }
 
-                 public function testGetRequireStatus()
-                 {
-                     // Arrange
+    public function testGetRequireStatus()
+    {
+        // Arrange
                      $member = new Member();
-                     $member->setRequireStatus("Belt");
-                     $expectedResult = "Belt";
+        $member->setRequireStatus("Belt");
+        $expectedResult = "Belt";
 
                      // Act
                      $result = $member->GetRequireStatus();
 
                      // Assert
                      $this->assertEquals($expectedResult, $result);
-                 }
+    }
 
-                     public function testGetName()
-                     {
-                         // Arrange
+    public function testGetName()
+    {
+        // Arrange
                          $member = new Member();
-                         $member->setName("Belt");
-                         $expectedResult = "Belt";
+        $member->setName("Belt");
+        $expectedResult = "Belt";
 
                          // Act
                          $result = $member->getName();
 
                          // Assert
                          $this->assertEquals($expectedResult, $result);
-                     }
+    }
 }

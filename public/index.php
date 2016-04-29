@@ -5,9 +5,6 @@ use Itb\Member;
 use Itb\Login;
 use Itb\User;
 
-
-
-
 // do out basic setup
 // ------------
 require_once __DIR__ . '/../app/configDatabase.php';

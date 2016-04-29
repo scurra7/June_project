@@ -24,10 +24,8 @@ class StudentController
      * @param $id
      * @return mixed
      */
- public function studentDetailAction(Request $request, Application $app,$id)
-
+ public function studentDetailAction(Request $request, Application $app, $id)
  {
-
      $studentRow = Student::getOneById($id);
 
      $argsArray = [
@@ -37,5 +35,4 @@ class StudentController
      $templateName = 'studentDetail';
      return $app['twig']->render($templateName . '.html.twig', $argsArray);
  }
-
 }

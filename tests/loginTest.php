@@ -7,8 +7,8 @@
  */
 
 namespace Itb;
-use Itb\Login;
 
+use Itb\Login;
 
 class loginTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,7 +19,7 @@ class loginTest extends \PHPUnit_Framework_TestCase
     {
         // Arrange
        $login = new Login();
-       $login->setId(1);
+        $login->setId(1);
         $expectedResult = 1;
 
         // Act
@@ -39,7 +39,7 @@ class loginTest extends \PHPUnit_Framework_TestCase
         $password = "password";
         $expectedResult = $password;
 
-        $login->setPassword( $expectedResult);
+        $login->setPassword($expectedResult);
 
         // Act
         $result = $login->getPassword();
@@ -49,32 +49,31 @@ class loginTest extends \PHPUnit_Framework_TestCase
     }
 
 
-      public function testGetRole()
-      {
-          // Arrange
+    public function testGetRole()
+    {
+        // Arrange
          $login = new Login();
-         $login->setRole("Credentials");
-          $expectedResult = "Credentials";
+        $login->setRole("Credentials");
+        $expectedResult = "Credentials";
 
           // Act
           $result =$login->getRole();
 
           // Assert
           $this->assertEquals($expectedResult, $result);
-      }
+    }
 
-        public function testGetUsername()
-        {
-            // Arrange
+    public function testGetUsername()
+    {
+        // Arrange
             $login = new Login();
-            $login->setUsername("Credentials");
-            $expectedResult = "Credentials";
+        $login->setUsername("Credentials");
+        $expectedResult = "Credentials";
 
             // Act
             $result = $login->getUsername();
 
             // Assert
             $this->assertEquals($expectedResult, $result);
-        }
-
+    }
 }

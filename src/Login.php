@@ -8,8 +8,6 @@
 
 namespace Itb;
 
-
-
 use Mattsmithdev\PdoCrud\DatabaseTable;
 use Mattsmithdev\PdoCrud\DatabaseManager;
 
@@ -154,8 +152,7 @@ class Login extends DatabaseTable
        // var_dump($user);
         //die();
         // if no record has this username, return FALSE
-        if(null == $user)
-        {
+        if (null == $user) {
             return false;
         }
 
@@ -176,8 +173,7 @@ class Login extends DatabaseTable
     {
         $user = Login::getOneByUsername($username);
 
-        if(null == $user)
-        {
+        if (null == $user) {
             return false;
         }
 
@@ -208,12 +204,10 @@ class Login extends DatabaseTable
         $statement->setFetchMode(\PDO::FETCH_CLASS, __CLASS__);
         $statement->execute();
 
-        if ($object = $statement->fetch())
-        {
+        if ($object = $statement->fetch()) {
             return $object;
         } else {
             return null;
         }
     }
-
 }

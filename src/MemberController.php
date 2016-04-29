@@ -29,8 +29,7 @@ class MemberController
      */
     public function editMemberTableDisplayAction(Request $request, Application $app)
     {
-
-       $member = Member::getAll();
+        $member = Member::getAll();
 
 
         $argsArray = [
@@ -50,7 +49,6 @@ class MemberController
      */
     public function editMemberDisplayAction(Request $request, Application $app, $id)
     {
-
         $memberRow = Member::getOneById($id);
 
 
@@ -125,7 +123,6 @@ class MemberController
      */
     public function createMemberAction(Request $request, Application $app)
     {
-
         $argsArray = [
 
         ];
@@ -133,8 +130,6 @@ class MemberController
 
         $templateName = 'createMember';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
-
-
     }
 
     /**
@@ -145,7 +140,6 @@ class MemberController
      */
     public function newMemberAction(Request $request, Application $app)
     {
-
         $paramsPost = $request->request->all();
         $id = $paramsPost['id'];
         $currentBeltGrade = $paramsPost['currentBeltGrade'];
@@ -201,12 +195,11 @@ class MemberController
      */
     public function deleteMemberTableDisplayAction(Request $request, Application $app)
     {
-
         $members = Member::getAll();
 
 
 
-       $argsArray = [
+        $argsArray = [
             'members' => $members,
             'text' => ''
         ];
@@ -214,8 +207,6 @@ class MemberController
 
         $templateName = 'deleteMember';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
-
-
     }
 
     /**
@@ -228,15 +219,9 @@ class MemberController
      */
     public function deleteMemberAction(Request $request, Application $app, $id)
     {
-
         $deleteSuccessful = Member::delete($id);
 
 
         return $app->redirect('/admin');
-
     }
-
-
-
-
 }

@@ -8,7 +8,6 @@
 
 namespace Itb;
 
-
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
 /**
@@ -116,5 +115,4 @@ class User extends DatabaseTable
     {
         $this->role = $role;
     }
-
 }

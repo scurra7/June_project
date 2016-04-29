@@ -7,8 +7,8 @@
  */
 
 namespace Itb;
-use Itb\User;
 
+use Itb\User;
 
 class userTest extends \PHPUnit_Framework_TestCase
 {
@@ -26,7 +26,7 @@ class userTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-   public function testGetUsers()
+    public function testGetUsers()
     {
         // Arrange
         $user = new User();
@@ -40,34 +40,31 @@ class userTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-           public function testGetPassword()
-           {
-               // Arrange
+    public function testGetPassword()
+    {
+        // Arrange
                $user = new User();
-               $user->setPassword("Details");
-               $expectedResult = "Details";
+        $user->setPassword("Details");
+        $expectedResult = "Details";
 
                // Act
                $result = $user->getPassword();
 
                // Assert
                $this->assertEquals($expectedResult, $result);
-           }
+    }
 
-             public function testGetRole()
-             {
-                 // Arrange
+    public function testGetRole()
+    {
+        // Arrange
                  $user = new User();
-                 $user->setRole("Details");
-                 $expectedResult = "Details";
+        $user->setRole("Details");
+        $expectedResult = "Details";
 
                  // Act
                  $result = $user->getRole();
 
                  // Assert
                  $this->assertEquals($expectedResult, $result);
-             }
-
-
-
+    }
 }

@@ -8,7 +8,6 @@
 
 namespace Itb;
 
-
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
 /**
@@ -202,7 +201,4 @@ class Member extends DatabaseTable
     {
         $this->requireStatus = $requireStatus;
     }
-
-
-
 }

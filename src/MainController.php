@@ -1,21 +1,33 @@
 <?php
+/**
+ * main class
+ * Class MainController
+ * @package Itb
+ *
+ */
 namespace Itb;
 
 use Itb\Login;
 use Itb\User;
 use Itb\Member;
-
-
 use Silex\Application;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * main class for
+ * Class MainController
+ * @package Itb
+ *
+ */
 class MainController
 {
     /**
-     * render the days page template
+     * Days action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
-
     public function daysAction(Request $request, Application $app)
     {
         $days = array(
@@ -37,11 +49,14 @@ class MainController
     }
 
     /**
-     * render the About page template
+     * Members action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
     public function membersAction(Request $request, Application $app)
     {
-      $members = Member::getAll();
+        $members = Member::getAll();
 
         $argsArray = [
 
@@ -55,7 +70,10 @@ class MainController
     }
 
     /**
-     * render the Index page template
+     * index Action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
     public function indexAction(Request $request, Application $app)
     {
@@ -66,11 +84,13 @@ class MainController
     }
 
     /**
+     * Login Action
+     *  login role for admin and student
      * @param Request $request
      * @param Application $app
      * @return RedirectResponse
+     *
      */
-
     public function loginAction(Request $request, Application $app)
     {
 
@@ -85,16 +105,13 @@ class MainController
         $isRole = Login::FindingRole($username);
         // action depending on login success
 
-        if($isLoggedIn) {
-
-            if($isRole)
-            {
-            // store username in 'user' in 'session'
+        if ($isLoggedIn) {
+            if ($isRole) {
+                // store username in 'user' in 'session'
             $app['session']->set('user', array('username' => $username, 'role' => $isRole));
             // success - redirect to the secure admin home page
             return $app->redirect('/admin');
-            }
-            else {
+            } else {
                 // store username in 'user' in 'session'
                 $app['session']->set('user', array('username' => $username, 'role' => $isRole));
                 // success - redirect to the secure admin home page
@@ -114,9 +131,16 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * Admin action
+     * redirects student away from admin login
+     * @param Request $request
+     * @param Application $app
+     * @return RedirectResponse
+     *
+     */
     public function adminPageAction(Request $request, Application $app)
     {
-
         $user = $app['session']->get('user');
 
         $members =Member::getAll();
@@ -128,24 +152,27 @@ class MainController
 
         );
 
-        if($user['role']) {
-
+        if ($user['role']) {
             $templateName = 'admin';
             return $app['twig']->render($templateName . '.html.twig', $argsArray);
-        }else
-        {
+        } else {
             return new RedirectResponse("/student");
         }
-
     }
 
+    /**
+     * Student action
+     * @param Request $request
+     * @param Application $app
+     * @return RedirectResponse
+     * redirects students
+     */
     public function studentPageAction(Request $request, Application $app)
     {
-
         $user = $app['session']->get('user');
 
        //print_r($user); die();
-        if($user['role']) {
+        if ($user['role']) {
             $students = Student::getAll();
 
             $argsArray = array(
@@ -154,11 +181,9 @@ class MainController
                 'username' => $user['username']
 
             );
-        }
-        else if($user['role'] == null) {
+        } elseif ($user['role'] == null) {
             return new RedirectResponse("/");
-        }
-        else {
+        } else {
             $students = Student::searchByColumn('id', 2);
             $argsArray = array(
 
@@ -172,13 +197,17 @@ class MainController
         $templateName = 'student';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
-
-
-    // action for route:    /logout
+    /**
+     * Logout action
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     * redirect to home page
+     */
     public function logoutAction(Request $request, Application $app)
     {
         // logout any existing user
-        $app['session']->set('user', null );
+        $app['session']->set('user', null);
 
         // redirect to home page
        //return $app->redirect('/');
@@ -187,10 +216,10 @@ class MainController
         // ------------
         $templateName = 'index';
         return $app['twig']->render($templateName . '.html.twig', []);
-
     }
 
     /**
+     * Error action
      * not found error page
      * @param \Silex\Application $app
      * @param             $message
@@ -206,9 +235,16 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-    public function detailAction (Request $request, Application $app, $id)
+    /**
+     * Detail action
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return mixed
+     * renders the detail page
+     */
+    public function detailAction(Request $request, Application $app, $id)
     {
-
         $member = Member::getOneById($id);
 
         $argsArray = [
@@ -219,8 +255,6 @@ class MainController
 
         $template = 'detail';
         return $app ['twig']->render($template . '.html.twig', $argsArray);
-
-
     }
 
     /**

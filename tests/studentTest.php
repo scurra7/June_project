@@ -7,8 +7,8 @@
  */
 
 namespace Itb;
-use Itb\Student;
 
+use Itb\Student;
 
 class studentTest extends \PHPUnit_Framework_TestCase
 {
@@ -29,7 +29,7 @@ class studentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
     
-   public function testGetSurname()
+    public function testGetSurname()
     {
         // Arrange
         $student = new Student();
@@ -43,61 +43,59 @@ class studentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-        public function testGetFirstName()
-        {
-            // Arrange
+    public function testGetFirstName()
+    {
+        // Arrange
             $student = new Student();
-            $student->setFirstName("Details");
-            $expectedResult = "Details";
+        $student->setFirstName("Details");
+        $expectedResult = "Details";
 
             // Act
             $result = $student->getFirstName();
 
             // Assert
             $this->assertEquals($expectedResult, $result);
-        }
+    }
 
-          public function testGetJoinedClub()
-          {
-              // Arrange
+    public function testGetJoinedClub()
+    {
+        // Arrange
               $student = new Student();
-              $student->setJoinedClub("Details");
-              $expectedResult = "Details";
+        $student->setJoinedClub("Details");
+        $expectedResult = "Details";
 
               // Act
               $result = $student->getJoinedClub();
 
               // Assert
               $this->assertEquals($expectedResult, $result);
-          }
+    }
 
-              public function testGetLastGrading()
-              {
-                  // Arrange
+    public function testGetLastGrading()
+    {
+        // Arrange
                   $student = new Student();
-                  $student->setLastGrading("Details");
-                  $expectedResult = "Details";
+        $student->setLastGrading("Details");
+        $expectedResult = "Details";
 
                   // Act
                   $result = $student->getLastGrading();
 
                   // Assert
                   $this->assertEquals($expectedResult, $result);
-              }
+    }
 
-                 public function testGetCurrentGrade()
-                 {
-                     // Arrange
+    public function testGetCurrentGrade()
+    {
+        // Arrange
                      $student = new Student();
-                     $student->setCurrentGrade("Details");
-                     $expectedResult = "Details";
+        $student->setCurrentGrade("Details");
+        $expectedResult = "Details";
 
                      // Act
                      $result = $student->GetCurrentGrade();
 
                      // Assert
                      $this->assertEquals($expectedResult, $result);
-                 }
-
-
+    }
 }
