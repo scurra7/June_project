@@ -24,7 +24,6 @@ class Utility
      *@param $shortName
      * @param $shortName controller and action name sepaerate by "/"
      * @return string namespace, controller class name plus :: plus action name
-     *
      */
     public static function controller($namespace, $shortName)
     {

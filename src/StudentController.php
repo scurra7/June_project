@@ -49,9 +49,16 @@ class StudentController
         $templateName = 'editMemberRow';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }*/
+
+    /**
+     * Edit student
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return mixed
+     */
     public function editStudentDisplayAction(Request $request, Application $app, $id)
     {
-
         $studentRow = Student::getOneById($id);
 
 
@@ -73,8 +80,6 @@ class StudentController
      */
     public function editStudentDetailsAction(Request $request, Application $app)
     {
-
-
         $user = $app['session']->get('user');
         //$id = $user['id'];
         // $username = $user['username'];
